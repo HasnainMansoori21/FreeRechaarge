@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maha Loot Offer - Free Recharge</title>
+    <style>
+        /* 1. Animated Background */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            color: #333;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 2. Glassmorphism Card Style */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            width: 88%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Top Offer Badge */
+        .badge {
+            background: #ff0000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 10px rgba(255,0,0,0.3);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
+
+        h2 { margin: 10px 0 5px; color: #222; font-weight: 800; }
+        .sub-head { color: #555; font-size: 13px; margin-bottom: 20px; }
+
+        /* Inputs */
+        input, select {
+            width: 100%;
+            padding: 14px;
+            margin: 8px 0;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            font-size: 15px;
+            outline: none;
+            box-sizing: border-box;
+            background: #f9f9f9;
+            transition: 0.3s;
+        }
+        input:focus, select:focus {
+            border-color: #23a6d5;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(35, 166, 213, 0.2);
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 5px 20px rgba(255, 75, 43, 0.4);
+            transition: transform 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:active { transform: scale(0.98); }
+        .whatsapp-btn { background: #25D366; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
+
+        /* Timer */
+        .timer {
+            font-size: 14px;
+            color: #d32f2f;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: #ffebee;
+            padding: 8px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Fake Notification Ticker */
+        .ticker-wrap {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            font-size: 12px;
+            padding: 5px 0;
+            z-index: 999;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .ticker { display: inline-block; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* Loading Animation Steps */
+        .loading-steps { font-size: 16px; color: #007bff; font-weight: 600; margin-top: 10px; min-height: 24px;}
+        
+        .progress-container {
+            width: 100%; background: #eee; border-radius: 10px; height: 12px; margin: 15px 0; overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%; width: 0%; background: linear-gradient(90deg, #00b09b, #96c93d); transition: width 0.4s;
+        }
+
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Fake Notifications -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            ✅ Rohit (Delhi) को ₹239 का रिचार्ज मिला | ✅ Anjali (Mumbai) को ₹666 का रिचार्ज मिला | ✅ Rahul (Bihar) ने 1.5GB Data प्राप्त किया | ✅ Priya (UP) को ₹719 का रिचार्ज मिला...
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="badge">Limited Time Offer!</div>
+
+        <!-- STEP 1: FORM -->
+        <div id="step1">
+            <!-- DATE Change Here -->
+            <div style="font-size: 12px; color: #888; margin-top: 10px;">Offers valid till: <span id="date" style="font-weight:bold; color:#d32f2f;"></span></div>
+            
+            <div style="font-size: 50px; margin: 10px 0;">🎁</div>
+            
+            <!-- YEAR Change Here -->
+            <h2>Free Recharge 2026</h2>
+            
+            <div class="timer">⏳ Offer ends in: <span id="countdown">15:00</span></div>
+            <p class="sub-head">नीचे अपना नंबर डालें और चेक करें कि आप फ्री रिचार्ज के लिए Eligible हैं या नहीं।</p>
+            
+            <input type="text" id="name" placeholder="👤 अपना नाम (Full Name)" required>
+            <input type="tel" id="number" placeholder="📱 मोबाइल नंबर (+91)" maxlength="10" inputmode="numeric" required>
+            
+            <select id="sim">
+                <option value="" disabled selected>📡 सिम चुनें (Select SIM)</option>
+                <option value="Jio">Jio 5G/4G</option>
+                <option value="Airtel">Airtel</option>
+                <option value="Vi">Vi (Vodafone Idea)</option>
+                <option value="BSNL">BSNL</option>
+            </select>
+
+            <button class="btn" onclick="startProcess()">Check Eligibility ➔</button>
+            <p style="font-size: 11px; color: #999; margin-top: 15px;">🔒 100% Safe & Secure</p>
+        </div>
+
+        <!-- STEP 2: PROCESSING -->
+        <div id="step2" class="hidden">
+            <img src="https://i.gifer.com/4V0b.gif" alt="Processing" width="100" style="margin-bottom: 20px; border-radius: 50%;">
+            <h3 style="color: #333;">Request Processing...</h3>
+            <div class="loading-steps" id="loadingText">Connecting to Server...</div>
+        </div>
+
+        <!-- STEP 3: SHARE -->
+        <div id="step3" class="hidden">
+            <div style="font-size: 60px;">🎉</div>
+            <h2 style="color: #28a745;">Congratulations!</h2>
+            <p style="font-size: 15px; color: #555;">आपका नंबर <strong>Free Recharge</strong> के लिए सेलेक्ट हो गया है!</p>
+            <p style="font-size: 14px; background: #e8f5e9; padding: 10px; border-radius: 8px; border: 1px dashed #28a745; color: #2e7d32;">
+                एक्टिवेट करने के लिए, इस ऑफर को <strong>10 दोस्तों</strong> या <strong>5 ग्रुप्स</strong> में WhatsApp पर शेयर करें।
+            </p>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p id="percentage" style="font-weight: bold;">0% Completed</p>
+
+            <button class="btn whatsapp-btn" onclick="shareOnWhatsapp()">
+                Share on WhatsApp 📲
+            </button>
+
+            <a href="https://www.google.com" id="finalBtn" class="btn hidden" style="background: #333;">
+                Confirm Recharge ✅
+            </a>
+
+            <p id="errorMsg" style="color: red; font-size: 13px; display: none; margin-top: 10px; font-weight: bold;">
+                ❌ कृपया पूरा शेयर करें!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 1. UPDATED Date Script (Shows Month + Year only)
+        var d = new Date();
+        // यह कोड महीना (जैसे February) और साल (2026) निकालेगा
+        var monthName = d.toLocaleString('default', { month: 'long' });
+        document.getElementById("date").innerHTML = monthName + " " + d.getFullYear();
+
+        // 2. Countdown Timer Logic
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) timer = duration;
+            }, 1000);
+        }
+        window.onload = function () {
+            var fifteenMinutes = 60 * 15,
+                display = document.querySelector('#countdown');
+            startTimer(fifteenMinutes, display);
+        };
+
+        // 3. Process Logic with Steps
+        function startProcess() {
+            var name = document.getElementById('name').value;
+            var number = document.getElementById('number').value;
+            var sim = document.getElementById('sim').value;
+
+            // Vibration for realism (Android only)
+            if (navigator.vibrate) navigator.vibrate(100);
+
+            if(name === "" || number.length !== 10 || sim === "") {
+                alert("कृपया अपना सही नाम और 10 अंकों का मोबाइल नंबर डालें!");
+                return;
+            }
+
+            document.getElementById('step1').style.display = 'none';
+            document.getElementById('step2').classList.remove('hidden');
+
+            // Fake Loading Steps
+            var steps = [
+                "Connecting to " + sim + " Server...",
+                "Verifying Number: +91 " + number + "...",
+                "Checking Offer Eligibility...",
+                "Offer Found: ₹719 FREE (84 Days)...",
+                "Generating Activation Link..."
+            ];
+            
+            var i = 0;
+            var stepInterval = setInterval(function() {
+                if (i < steps.length) {
+                    document.getElementById('loadingText').innerText = steps[i];
+                    i++;
+                } else {
+                    clearInterval(stepInterval);
+                    document.getElementById('step2').style.display = 'none';
+                    document.getElementById('step3').classList.remove('hidden');
+                    if (navigator.vibrate) navigator.vibrate([200, 100, 200]); // Success vibration
+                }
+            }, 800);
+        }
+
+        // 4. WhatsApp Sharing Logic
+        var progress = 0;
+        function shareOnWhatsapp() {
+            var currentUrl = window.location.href;
+            var message = `🎉 *LOOT OFFER ALERT!* 🎉
+
+मुफ्त रिचार्ज का महा ऑफर! 🤑
+Jio, Airtel, Vi सभी यूजर्स को मिल रहा है *Free 3 महीने का रिचार्ज*!
+
+मैंने तो अपना रिचार्ज कर लिया, आप भी अभी चेक करें 👇
+${currentUrl}
+
+⏳ *ऑफर केवल 15 मिनट के लिए वैलिड है!*
+जल्दी करें! 🏃‍♂️💨`;
+
+            window.open("whatsapp://send?text=" + encodeURIComponent(message));
+            
+            // Random Progress
+            var randomIncrement = Math.floor(Math.random() * (15 - 8 + 1) + 8); 
+            progress += randomIncrement;
+            
+            if (progress >= 100) {
+                progress = 100;
+                document.getElementById('errorMsg').style.display = 'none';
+                document.querySelector('.whatsapp-btn').style.display = 'none';
+                document.getElementById('finalBtn').classList.remove('hidden');
+                setTimeout(() => alert("Verification Successful! Click 'Confirm Recharge' now."), 500);
+            } else {
+                 document.getElementById('errorMsg').style.display = 'block';
+                 document.getElementById('errorMsg').innerText = `❌ अभी ${100 - progress}% और शेयर करना है!`;
+            }
+
+            document.getElementById('progressBar').style.width = progress + "%";
+            document.getElementById('percentage').innerHTML = progress + "% Completed";
+        }
+    </script>
+
+</body>
+</html>

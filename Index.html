@@ -1,0 +1,110 @@
+<!-- File Name: index.html -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Free Recharge</title>
+    <style>
+        /* वही पुरानी थीम (Blue/Purple Style) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 400px;
+            border-top: 6px solid #ff007f;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 16px; /* फोंट साइज थोड़ा बढ़ाया */
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        .features {
+            text-align: left;
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .features li {
+            list-style: none;
+            margin-bottom: 8px;
+            color: #444;
+            font-size: 14px;
+        }
+        .features li::before {
+            content: "✅";
+            margin-right: 10px;
+        }
+        .btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            width: 80%;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div style="font-size: 60px;">🎁</div>
+        <h1>Welcome Friend!</h1>
+        
+        <!-- टेक्स्ट बदला गया -->
+        <p>रिचार्ज करने के लिए नीचे दिए गए बटन पर क्लिक करें।</p>
+
+        <div class="features">
+            <li>Instant Activation (तुरंत रिचार्ज)</li>
+            <li>All Networks Supported (Jio, Airtel, Vi)</li>
+            <li>No Hidden Charges (बिलकुल फ्री)</li>
+        </div>
+
+        <!-- बटन हिंदी में -->
+        <a href="recharge.html" class="btn">फ्री रिचार्ज पाएं ➔</a>
+
+        <div class="footer">
+            © 2024 Free Recharge Offer <br> Terms & Conditions Apply
+        </div>
+    </div>
+
+</body>
+</html>
